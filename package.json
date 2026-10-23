@@ -1,0 +1,33 @@
+{
+  "name": "masterclass-web-pruebas-seguridad",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "node --env-file=.env --import tsx --watch src/main.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node --env-file=.env dist/main.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "token:demo": "node --env-file=.env --import tsx tools/dev-token.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.0",
+    "jose": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@types/supertest": "^6.0.0",
+    "@vitest/coverage-v8": "^4.0.0",
+    "supertest": "^7.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  }
+}
