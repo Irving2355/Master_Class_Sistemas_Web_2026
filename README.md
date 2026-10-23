@@ -55,11 +55,6 @@ Solo se usa memoria: al reiniciar se pierden los tickets. Una prueba de
 integracion con memoria verifica **la integracion de HTTP y capas**, NO una BD
 SQL real. Para cubrir SQL, implementar un adaptador MySQL de pruebas aislado.
 
-## Guia
-
-Consultar `Guia_Master_Class_Web_2026.tex` y PDF (si esta disponible) para
-secuencia, actividades, dibujos, explicaciones y documentacion oficial.
-
 ## Sugerencia al primer commit
 
 Ejecutar `npm install` (crea `package-lock.json`), agregar el lockfile a Git y
