@@ -19,9 +19,21 @@ export function crearApp({ service, tokens, limite = 100 }: AppOptions) {
   // Limitador de memoria: adecuado para demostrar, no para distribuir
   // limites entre multiples procesos. Revisar trust proxy en despliegue.
   app.use('/api', rateLimit({
+    rateLimit({
+    // Tiempo durante el cual contamos las solicitudes.
+    // La unidad son MILISEGUNDOS.
     windowMs: 60_000,
+
+    // Cantidad maxima de solicitudes permitidas
+    // para cada cliente durante esa ventana.
     limit: limite,
+
+    // Enviar informacion del limite mediante
+    // encabezados HTTP del formato draft-8.
     standardHeaders: 'draft-8',
+
+    // No enviar los encabezados antiguos
+    // X-RateLimit-*.
     legacyHeaders: false,
   }));
 

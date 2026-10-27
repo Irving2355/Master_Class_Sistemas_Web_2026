@@ -19,7 +19,7 @@ export function autenticar(tokens: TokenProvider): RequestHandler {
     try {
       req.usuario = await tokens.verificar(partes[1]);
       next(); // Solo pasa al siguiente middleware si verifico.
-    } catch {
+    } catch{
       res.status(401).json({ error: 'Token invalido o expirado' });
     }
   };
